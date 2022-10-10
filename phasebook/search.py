@@ -38,17 +38,17 @@ def search_users(args, id, name, age, occupation):
     searchres = []
     temp = request.args
 
-    # for currUser in USERS:
-    #     for keyval in temp.keys():
+    for currUser in USERS:
+        for keyval in temp.keys():
 
-    #         if keyval == 'age':
-    #             if abs(int(temp[keyval])-int(currUser[keyval])) == 1:
-    #                 searchres.append(currUser)
-    #                 break
+            if keyval == 'age':
+                if abs(int(temp[keyval])-int(currUser[keyval])) == 1:
+                    searchres.append(currUser)
+                    break
 
-    #         if str(temp[keyval]) in str(currUser[keyval]):
-    #            searchres.append(currUser)
-    #            break
+            if str(temp[keyval]) in str(currUser[keyval]):
+               searchres.append(currUser)
+               break
     
     ############ BONUS CHALLENGE SEARCH CODE ########################
 
