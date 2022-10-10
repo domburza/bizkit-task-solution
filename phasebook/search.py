@@ -35,7 +35,6 @@ def search_users(args, id, name, age, occupation):
 
     # Implement search here!
 
-
     searchres = []
     temp = request.args
 
@@ -52,20 +51,19 @@ def search_users(args, id, name, age, occupation):
                break
     
     ############ BONUS CHALLENGE SEARCH CODE ########################
-    
-    # for keyval in temp.keys():
-    #     for itemlol in USERS: 
 
-    #         if keyval == 'age':
-    #             if abs(int(temp[keyval])-int(itemlol[keyval])) == 1:
-    #                 if itemlol not in searchres:
-    #                     searchres.append(itemlol)
-    #                     continue
-    #         # print(str(temp[keyval]))
-    #         # print(str(itemlol[keyval]))
-    #         if str(temp[keyval]) in str(itemlol[keyval]):
-    #            if itemlol not in searchres:
-    #                     searchres.append(itemlol)
-    #                     continue
+    for keyval in temp.keys():
+        for itemlol in USERS: 
+
+            if keyval == 'age':
+                if abs(int(temp[keyval])-int(itemlol[keyval])) == 1:
+                    if itemlol not in searchres:
+                        searchres.append(itemlol)
+                        continue
+
+            if str(temp[keyval]) in str(itemlol[keyval]):
+               if itemlol not in searchres:
+                        searchres.append(itemlol)
+                        continue
 
     return searchres
